@@ -1,5 +1,4 @@
 /*
-
     This code calculates the probability distribution for the cover time of an extended star
 */
 
@@ -18,7 +17,6 @@ int factorial(int N)
     else {
         return N * factorial(N-1);
         }
-
 }
 
 
