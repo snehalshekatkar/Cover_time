@@ -68,25 +68,34 @@ float cumulative(int n, int D, int l[], float phi){
     return S;
 }
 
+//Starting the main function
+
 int main(){
     int D = 3;
 
-    // Specify the lengths of the arms of the extended star
+    // Specify the lengths of the arms of the extended star..
     int l[D] = {2, 3, 2};
 
     // Specify the probabililty of a success
     float phi = 0.3;
 
-    ofstream f;
-    f.open("prob_dist.dat");
+    // Open a file to write the output to
+    fstream f;
+    f.open("prob_dist.dat", ios::out);
+    fstream g;
+    g.open("cum_dist.dat", ios::out);
 
     //Calculate the probability that the cover time is exact n
     for (int n = 1; n < 100; n++){
         cout << n << endl;
         f << n << "," << cumulative(n, D, l, phi)-cumulative(n-1, D, l, phi) << endl;
+        g << n << "," << cumulative(n, D, l, phi) << endl;
     }
 
     f.close();
+    g.close();
     return 0;
 
 }
+
+// Writing something!

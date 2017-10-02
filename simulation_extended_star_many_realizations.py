@@ -19,7 +19,7 @@ f = open('tot_times.dat', 'w')
 
 # Loop over the realizations
 
-for ind in range(5000):
+for ind in range(10000):
 
     # Initialize the states: 0 and 1 represent the absense and the presence of the message 
     for v in g.vertices():
@@ -57,3 +57,4 @@ for ind in range(5000):
     f.write(str(ind) + ',' + str(t) + '\n') 
     
 f.close()
+
